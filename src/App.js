@@ -2,6 +2,8 @@ import userEvent from "@testing-library/user-event";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import {useEffect, useState, useContext} from "react";
+import Navbar from "./pages/Navbar"
+import Book from "./pages/Book";
 
 function App() {
   const [users, setUsers] = useState([])
@@ -14,10 +16,12 @@ function App() {
   },[])
   return (
     <div className="App">
+      <Navbar/>
+      <Home/>
       {users.map((user) =>(
-        <Home name ={user.name} username ={user.username} email ={user.email}/>
+        <Book name ={user.name} username ={user.username} email ={user.email}/>
       ))}
-      
+      {/* <Book/> */}
       {/* <Login/> */}
     </div>
   );
