@@ -1,26 +1,26 @@
 import userEvent from "@testing-library/user-event";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import {useEffect, useState, useContext} from "react";
+import BookNow from "./pages/BookNow";
 import Navbar from "./pages/Navbar"
-import Book from "./pages/Book";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
-  const [users, setUsers] = useState([])
-
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-    .then((res) => res.json())
-    .then(data => setUsers(data))
-    console.log(setUsers)
-  },[])
+  
   return (
     <div className="App">
-      <Navbar/>
-      <Home/>
-      {users.map((user) =>(
-        <Book name ={user.name} username ={user.username} email ={user.email}/>
-      ))}
+      <BrowserRouter>
+        <Navbar/>
+        <Routes>
+            <Route exact='true' path='/' element={<Home/>}/>
+            <Route exact='true' path='/login' element={<Login/>}/>
+            <Route exact='true' path='/booknow' element={<BookNow/>}/>
+        </Routes>
+      
+      
+      
+      </BrowserRouter>
+      
       {/* <Book/> */}
       {/* <Login/> */}
     </div>

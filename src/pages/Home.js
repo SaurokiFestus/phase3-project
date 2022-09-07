@@ -6,10 +6,19 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea, Button, Container, CssBaseline, Box} from '@mui/material';
 import {useEffect, useState, useContext} from "react"
 import { ClassNames } from '@emotion/react';
-import Book from './Book';
+import Book from './Cards';
+
 
 
 function Home() {
+  const [users, setUsers] = useState([])
+
+  useEffect(() => {
+    fetch("http://127.0.0.1:9292/locations")
+    .then((res) => res.json())
+    .then(data => setUsers(data))
+    console.log(setUsers)
+  },[])
 
   
   return (
@@ -20,7 +29,9 @@ function Home() {
       {/* <Book/> */}
     
     </Container>
-    
+      {users.map((user) =>(
+        <Book street_name = {user.street_name}  street_address = {user.street_address} />
+      ))}
     </>
   );
 }
