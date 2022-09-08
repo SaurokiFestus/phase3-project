@@ -15,6 +15,7 @@ import TabPanel from '@mui/lab/TabPanel';
 
 
 
+
 function Home() {
   const [users, setUsers] = useState([])
 
@@ -49,10 +50,12 @@ function Home() {
         <TabPanel value="3">Item Three</TabPanel>
       </TabContext>
 
-
+      <div className='cards'>
       {users.map((user) =>(
         <Cards street_name = {user.street_name}  street_address = {user.street_address} />
       ))}
+      </div>
+      
     </>
   );
 }

@@ -7,6 +7,8 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Book from './Cards';
 import {Link} from "react-router-dom";
+import { pink } from '@mui/material/colors';
+import SvgIcon, { SvgIconProps } from '@mui/material/SvgIcon';
 // import MenuIcon from '@mui/icons-material/MenuIcon';
 // import HomeIcon from "mui/material/HomeIcon"
 
@@ -14,7 +16,11 @@ export default function ButtonAppBar() {
   return (
     <Box sx={{ flexGrow: 1, marginBottom: 3 }}>
       <AppBar position="static">
+      
         <Toolbar>
+        <Link to="/">
+          <Button color="secondary">Home</Button>
+        </Link>
           <IconButton
             size="large"
             edge="start"
@@ -28,11 +34,11 @@ export default function ButtonAppBar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             
           </Typography>
-          {/* <Link to="/login"> */}
-          {/* <Button color="inherit">Login</Button>
+          <Link to="/locations">
+          <Button color="inherit">Locations</Button>
           </Link>
           
-          <Button color="inherit">Logout</Button> */}
+          {/* <Button color="inherit">Logout</Button>  */}
         </Toolbar>
       </AppBar>
     </Box>

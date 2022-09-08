@@ -5,12 +5,12 @@ const Locations = () => {
   const [allLocations, setAllLocations] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:9292/players")
+    fetch("http://127.0.0.1:9292/locations")
       .then((r) => r.json())
       .then((data) => setAllLocations(data));
   }, []);
 
-  // console.log(allPlayers);
+  
 
   function deleteLocations(id) {
     fetch(`http://127.0.0.1:9292/locations/${id}`, {
@@ -18,14 +18,14 @@ const Locations = () => {
     })
       .then((r) => r.json())
       .then(() => {
-        const goThru = allLocations.filter((player) => player.id !== id);
-        setAllPlayers(goThru);
+        const goThru = allLocations.filter((location) => location.id !== id);
+        setAllLocations(goThru);
       });
   }
 
   return (
     <>
-      <LocationsList totalPlayers={allLocations} deleteLocations={deleteLocations} />
+      <LocationsList totalLocations={allLocations} deleteLocations={deleteLocations} />
     </>
   );
 };
