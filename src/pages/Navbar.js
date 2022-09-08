@@ -37,6 +37,9 @@ export default function ButtonAppBar() {
           <Link to="/locations">
           <Button color="inherit">Locations</Button>
           </Link>
+          <Link to="/about">
+          <Button color="inherit">About</Button>
+          </Link>
           
           {/* <Button color="inherit">Logout</Button>  */}
         </Toolbar>

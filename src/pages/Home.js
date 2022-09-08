@@ -44,10 +44,10 @@ function Home() {
           </TabList>
         </Box>
         <TabPanel value="1">
-          <img src='https://cdn.dribbble.com/users/13897/screenshots/17667646/media/e04b41dc9c80160ded28482e9041cf54.jpg' alt='' width="fit" height="400px"/>
+          WANT TO KNOW WHAT EVERYONE IN THE BILLBOARD WORLD IS TALKING ABOUT...
         </TabPanel>
-        <TabPanel value="2">Item Two</TabPanel>
-        <TabPanel value="3">Item Three</TabPanel>
+        <TabPanel value="2">GET IN ON THE KNOW ON BILLAD</TabPanel>
+        <TabPanel value="3">BOOK WITH US NOW</TabPanel>
       </TabContext>
 
       <div className='cards'>
