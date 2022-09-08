@@ -19,7 +19,9 @@ function Cards({street_name, street_address}) {
           marginBottom: 5,
           padding: 2,
           display: "grid"
-      }}>
+      }}
+      onClick={()=>{navigate("/booknow")}}
+      >
       <CardActionArea>
         <CardMedia
           component="img"
@@ -42,7 +44,7 @@ function Cards({street_name, street_address}) {
       </CardActionArea>
       <Button 
           variant="outlined"
-          onClick={() => {navigate("/login")}}
+          onClick={() => {navigate("/booknow")}}
       >
         Book now
         </Button>

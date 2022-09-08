@@ -6,7 +6,12 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea, Button, Container, CssBaseline, Box} from '@mui/material';
 import {useEffect, useState, useContext} from "react"
 import { ClassNames } from '@emotion/react';
-import Book from './Cards';
+import Cards from './Cards';
+import Tab from '@mui/material/Tab';
+import TabContext from '@mui/lab/TabContext';
+import TabList from '@mui/lab/TabList';
+import TabPanel from '@mui/lab/TabPanel';
+
 
 
 
@@ -21,16 +26,32 @@ function Home() {
   },[])
 
   
+  const [value, setValue] = useState('1');
+
+  const handleChange = (event, newValue: string) => {
+    setValue(newValue);
+  };
+
   return (
     <>
-    <CssBaseline />
-      <Container sx={{height: "40vh", display: "flex", bgcolor: '#cfe8fc'}}>
-        {/* <Box sx={{ bgcolor: '#cfe8fc', height: '1000vh' }} /> */}
-      {/* <Book/> */}
-    
-    </Container>
+    <TabContext value={value}>
+        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+          <TabList onChange={handleChange} aria-label="lab API tabs example">
+            <Tab label="Item One" value="1" />
+            <Tab label="Item Two" value="2" />
+            <Tab label="Item Three" value="3" />
+          </TabList>
+        </Box>
+        <TabPanel value="1">
+          <img src='https://cdn.dribbble.com/users/13897/screenshots/17667646/media/e04b41dc9c80160ded28482e9041cf54.jpg' alt='' width="fit" height="400px"/>
+        </TabPanel>
+        <TabPanel value="2">Item Two</TabPanel>
+        <TabPanel value="3">Item Three</TabPanel>
+      </TabContext>
+
+
       {users.map((user) =>(
-        <Book street_name = {user.street_name}  street_address = {user.street_address} />
+        <Cards street_name = {user.street_name}  street_address = {user.street_address} />
       ))}
     </>
   );
