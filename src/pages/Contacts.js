@@ -3,9 +3,9 @@ import React from 'react'
 function Contacts() {
   return (
     <div>
-        <h1>
-            BillAd is a advertisement booking web app whereby you can check for particular availability of a billboard then book it for a specified period of time.
-        </h1>
+        <h2>
+          You can find us at +245 734 567 890
+        </h2>
     </div>
   )
 }
