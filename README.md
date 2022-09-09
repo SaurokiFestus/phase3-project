@@ -1,53 +1,50 @@
 # Bill Ad
  ## By Sauroki Festus
-## Screenshot
- ![image](./file:///home/moringa/Pictures/Screenshot%20from%202022-09-09%2010-26-55.png)
  ## Table of Content
  - [Description](#description)
  - [Features](#features)
  - [Requirements](#requirements)
- - [Installation Process](#installation-Process)
  - [Live Link](#Live-Link)
  - [Technology  Used](#technology-Used)
  - [Licence](#licence)
  - [Authors Info](#Authors-Info)
  ## Description
- <p>This project is a web application for Quick movers that shows details about the different companies it offers to move your goods, has information about the different companies, detailed images, a portfolio section and a form that enables users to send their requests to Quick movers</p>
-[Go Back to the top](#delani-studio)
+ <p>BillAd is a advertisement booking web app whereby you can check for particular availability of a billboard then book it for a specified period of time.</p>
+
+[Go Back to the top](#bill-ad)
 
 ## Features
 As a user of the application,you will be able to :
-1. See a description of what the options offered by the website.
-1. Can select a company of choice to work with.
-[Go Back to the top](#quick-movers)
+1. See a list of available billboards.
+2. See a list of available locations.
+3. Book a billboard.
+4. Delete a billboard.
 
-[Go Back to the top](#quick-movers)
+[Go Back to the top](#bill-ad)
 
  ###  Requirements
  * Access to  a computer or any other garget
  * Access to internet
 
- ### Installation Process
- ****
+ [Go Back to the top](#bill-ad)
 
-* Clone to thir repo : git clone https://saurokifestus.github.io/Independent-Project-2/
-* Unzip the downloaded files in a folder of choice.
-* Open the index file from the zipped file with any browser.
- ****
-
- [Go Back to the top](#quick-movers)
 ### Live Link
 
-- Click this link to view the live application https://saurokifestus.github.io/Independent-Project-2/
+- Click this link to view the live application https://github.com/SaurokiFestus/phase3-project
 
 ### Technology  Used
 
-* HTML - which was used to develope the structure off the pages.
+* React - which was used to design the frontend.
 * CSS - which was used to style the User Interface.
+* Ruby - which was used for the backed.
+* Material-UI - which was used for styling
 
-[Go Back to the top](#quick-movers)
+
+[Go Back to the top](#bill-ad)
+
 ## Known Bugs
-* Mailchimp API does not function correctly as expected.
+* None
+
 ## Licence
 MIT License
 Copyright (c) [2021] [Sauroki Festus]
@@ -66,6 +63,10 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-[Go Back to the top](#quick-movers)
+
+[Go Back to the top](#bill-ad)
+
 ## Authors Info
-[Go Back to the top](#quick-movers)
+Call - 07239875348
+
+[Go Back to the top](#bill-ad)
