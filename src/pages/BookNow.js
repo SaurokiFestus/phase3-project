@@ -4,33 +4,57 @@ import TextField from '@mui/material/TextField';
 import { Button, Container} from '@mui/material';
 import LocationsList from './LocationsList';
 import Locations from './Locations';
+import {useEffect, useState, useContext} from "react"
 
-export default function FormPropsTextFields() {
+export default function Form() {
+
+  const [name, setName] = useState("")
+  const [number, setNumber] = useState("")
+  const [search, setSearch] = useState("")
+  const [location, setLocation] = useState("")
+  const [duration, setDuration] = useState("")
+
+  const handleSubmit = (e) => {
+     e.preventDefault()
+     const form = {name, number, search, location, duration}
+    //  console.log(form)
+
+    fetch('http://127.0.0.1:9292/adverts', {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(form)
+    }).then (() => {
+      alert('New Advert Added')
+    })
+  }
+
+
   return (
     <>
+    <Container>
+      <Box>
+    <form onSubmit={handleSubmit}>
+
     
-    <Container sx={{height: "40vh", display: "flex", bgcolor: '#cfe8fc', width: "800px", borderRadius: "8px"}}>
-    <Box
-      component="form"
-      sx={{
-        '& .MuiTextField-root': { m: 1, width: '25ch' },
-      }}
-      noValidate
-      autoComplete="off"
-    >
-      <div>
+  
+  
+    
+      
        
-        
         <TextField
           id="outlined-helperText"
           label="Name"
           type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value) }
           
         />
-        <TextField
+        {/* <TextField
           id="outlined-number"
           label="Phone Number"
           type="text"
+          value={number}
+          onChange={(e) => setNumber(e.target.value) }
           // InputLabelProps={{
           //   shrink: true,
           // }}
@@ -38,27 +62,43 @@ export default function FormPropsTextFields() {
         <TextField 
           id="outlined-search" 
           label="Price range" 
-          type="search" />
+          type="filter" 
+          value={search}
+          onChange={(e) => setSearch(e.target.value) }
+          />
         <TextField
           id="outlined-helperText"
           label="Location"
+          type='text'
+          value={location}
+          onChange={(e) => setLocation(e.target.value) }
         />
          <TextField
           id="outlined-helperText"
           label="Duration"
           type="text"
+          value={duration}
+          onChange={(e) => setDuration(e.target.value) }
           
         />
-      
-      </div>
+       */}
+    
       <Button 
-          variant="outlined"
+      type='submit'
+      variant="outlined"
       >
         Book now
         </Button>
+  
+    </form>
     </Box>
     </Container>
-    {/* <Locations/> */}
+    
+    
+    <p>{name}</p>
+    
+  
+   
     </>
   );
 }

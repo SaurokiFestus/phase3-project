@@ -9,13 +9,14 @@ import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 const LocationsList = ({totalLocations, deleteLocations}) => {
 
-    const [page, setPage] = React.useState(0);
-    const [rowsPerPage, setRowsPerPage] = React.useState(10);
+    const [page, setPage] = useState(0);
+    const [rowsPerPage, setRowsPerPage] = useState(10);
 
-    const navigate = useNavigate();
+   
       
     const handleChangePage = (e, newPage ) => {
         setPage(newPage);
@@ -38,14 +39,14 @@ const LocationsList = ({totalLocations, deleteLocations}) => {
   
       const darkTheme = createTheme({
           palette: {
-            mode: 'light',
+            mode: 'dark',
           },
       })
   
     return (
       <ThemeProvider theme={darkTheme}>
-      <Paper sx={{ width: '100%', overflow: 'hidden' }}>
-        <TableContainer component={Paper}>
+      <Paper sx={{ width: '100%', overflow: 'scroll' }}>
+        <TableContainer>
         <Table sx={{ minWidth: 700 }} aria-label="customized table">
           <TableHead>
             <TableRow>
@@ -61,12 +62,12 @@ const LocationsList = ({totalLocations, deleteLocations}) => {
                 <TableRow 
             key={location.id}
             >
-              <StyledTableCell align="left">{location.id}</StyledTableCell>
+              <StyledTableCell align="center">{location.id}</StyledTableCell>
               
               <StyledTableCell align="center">{location.street_name}</StyledTableCell>
               <StyledTableCell align="center">{location.street_address}</StyledTableCell>
               
-              <StyledTableCell align="right">
+              {/* <StyledTableCell align="right"> */}
               <Box
                 m={1}
                 display="flex"
@@ -75,7 +76,7 @@ const LocationsList = ({totalLocations, deleteLocations}) => {
               >
                 <Button 
                 variant="contained" 
-                color="error"
+                color="primary"
                 onClick={() => {
                   deleteLocations(location.id);
                 }}
@@ -83,15 +84,15 @@ const LocationsList = ({totalLocations, deleteLocations}) => {
                   Delete
                 </Button>
               </Box>
-              </StyledTableCell>
+              {/* </StyledTableCell> */}
             </TableRow>
             ))}
             </TableBody>
             </Table>
             </TableContainer>
           <TablePagination
-            rowsPerPageOptions={[10, 25, 100]}
-            component="div"
+            
+            // component="div"
             count={totalLocations.length}
             rowsPerPage={rowsPerPage}
             page={page}

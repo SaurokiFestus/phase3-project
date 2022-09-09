@@ -15,7 +15,7 @@ import SvgIcon, { SvgIconProps } from '@mui/material/SvgIcon';
 export default function ButtonAppBar() {
   return (
     <Box sx={{ flexGrow: 1, marginBottom: 3 }}>
-      <AppBar position="static">
+      <AppBar position="static" color="">
       
         <Toolbar>
         <Link to="/">
@@ -35,10 +35,13 @@ export default function ButtonAppBar() {
             
           </Typography>
           <Link to="/locations">
-          <Button color="inherit">Locations</Button>
+          <Button color="secondary">Available Locations</Button>
           </Link>
           <Link to="/about">
-          <Button color="inherit">About</Button>
+          <Button color="secondary">About</Button>
+          </Link>
+          <Link to="/contacts">
+          <Button color="secondary">Contact Us</Button>
           </Link>
           
           {/* <Button color="inherit">Logout</Button>  */}

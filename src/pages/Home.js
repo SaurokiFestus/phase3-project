@@ -29,7 +29,7 @@ function Home() {
   
   const [value, setValue] = useState('1');
 
-  const handleChange = (event, newValue: to_string) => {
+  const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
