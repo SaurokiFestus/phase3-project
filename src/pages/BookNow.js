@@ -19,7 +19,7 @@ export default function Form() {
      const form = {name, number, search, location, duration}
     //  console.log(form)
 
-    fetch('http://127.0.0.1:9292/adverts', {
+    fetch('https://backenndd2.herokuapp.com/adverts', {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(form)
@@ -34,16 +34,10 @@ export default function Form() {
     <Container>
       <Box>
     <form onSubmit={handleSubmit}>
-
-    
-  
-  
-    
-      
        
         <TextField
           id="outlined-helperText"
-          label="Name"
+          label="Advert Name"
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value) }

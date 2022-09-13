@@ -5,7 +5,7 @@ const Locations = () => {
   const [allLocations, setAllLocations] = useState([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:9292/locations")
+    fetch("https://backenndd2.herokuapp.com/locations")
       .then((r) => r.json())
       .then((data) => setAllLocations(data));
   }, []);
@@ -13,7 +13,7 @@ const Locations = () => {
   
 
   function deleteLocations(id) {
-    fetch(`http://127.0.0.1:9292/locations/${id}`, {
+    fetch(`https://backenndd2.herokuapp.com/locations/${id}`, {
       method: "DELETE",
     })
       .then((r) => r.json())

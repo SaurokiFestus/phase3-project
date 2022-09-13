@@ -21,7 +21,7 @@ function Home() {
   const [users, setUsers] = useState([])
 
   useEffect(() => {
-    fetch("http://127.0.0.1:9292/locations")
+    fetch("https://backenndd2.herokuapp.com/locations")
     .then((res) => res.json())
     .then(data => setUsers(data))
     console.log(setUsers)
