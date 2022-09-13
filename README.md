@@ -30,7 +30,8 @@ As a user of the application,you will be able to :
 
 ### Live Link
 
-- Click this link to view the live application https://github.com/SaurokiFestus/phase3-project
+- Click this link to view the live application 
+    https://phase3-project.vercel.app/
 
 ### Technology  Used
 
